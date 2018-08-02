@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="userCards">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script>
+			const app = angular.module('userCards', []);
+			app.controller('UserController', function () {
+				this.user = {
+					fullName: `123`
+				}
+			});
+			app.directive('userCard', function () {
+				return {
+					restrict: 'E',
+					template: `<h5><a href="#">{{userController.user.fullName}}1</a></h5>`
+				}
+			})    </script>
+</head>
+<body ng-controller="UserController as userController">
+<user-card></user-card>
+</body>
+</html>
